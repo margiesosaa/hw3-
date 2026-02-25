@@ -1,0 +1,19 @@
+<h1>New Entry for <%= @place.name %></h1>
+
+<form action="/entries" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="entry[place_id]" value="<%= @place.id %>">
+
+  <label>Title</label>
+  <input type="text" name="entry[title]">
+
+  <label>Date</label>
+  <input type="date" name="entry[occurred_on]">
+
+  <label>Description</label>
+  <textarea name="entry[description]"></textarea>
+
+  <button type="submit">Save Entry</button>
+</form>
+
+<a href="/places/<%= @place.id %>">Back to <%= @place.name %></a>

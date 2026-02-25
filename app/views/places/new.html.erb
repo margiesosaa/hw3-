@@ -1,0 +1,12 @@
+<h1>New Place</h1>
+
+<form action="/places" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>Name</label>
+  <input type="text" name="place[name]">
+
+  <button type="submit">Create Place</button>
+</form>
+
+<a href="/places">Back to Places</a>
